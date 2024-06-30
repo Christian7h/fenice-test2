@@ -1,0 +1,36 @@
+---
+// src/components/Navbar.astro
+---
+
+<nav class="bg-rose-200 opacity-60 py-4 shadow-md">
+  <div class="container mx-auto flex justify-between items-center">
+      <a href="/" class="text-lg font-bold text-gray-800">Kaisa</a>
+      <ul class="flex items-center">
+          <li class="mr-6">
+              <a href="/women" class="text-black hover:text-gray-900 transition duration-300">Mujer</a>
+          </li>
+          <li class="mr-6">
+              <a href="/men" class="text-black hover:text-gray-900 transition duration-300">Hombre</a>
+          </li>
+          <li class="mr-6">
+              <a href="/kids" class="text-black hover:text-gray-900 transition duration-300">Niños</a>
+          </li>
+          <li>
+              <a href="/sale" class="text-black hover:text-gray-900 transition duration-300">Descuentos</a>
+          </li>
+      </ul>
+      <div class="flex items-center">
+          <a href="/cart" class="text-black hover:text-gray-900 transition duration-300 snipcart-checkout">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="ml-2">Carro</span>
+              <span class="snipcart-items-count"></span>
+              <span class="snipcart-total-price"></span>
+          </a>
+          <a href="/account" class="text-black hover:text-gray-900 transition duration-300 ml-4">
+              <i class="fas fa-user"></i>
+              <span class="ml-2">Cuenta</span>
+          </a>
+      </div>
+
+  </div>
+</nav>
