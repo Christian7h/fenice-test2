@@ -2,51 +2,21 @@
 // src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import { products } from '../data/products';
 ---
 
 <Layout title="Inicio">
-    <section class="inline-grid gap-5 mt-12 sm:grid-cols-3 lg:grid-cols-3">
-      <Card id="product1" url="/"  title="Nike Air MX Super 2500 - Red" body="Descripción del producto" imgSrc="/img1.jpg" price="6.990" oldPrice="10.990" />
-      <Card id="product1" url="/"  title="Nike Air MX Super 2500 - Red" body="Descripción del producto" imgSrc="/img1.jpg" price="$8.990" oldPrice="$14.990" />
-    </section>
-    <div class="relative flex flex-col w-full max-w-xs overflow-hidden border border-gray-100 bg-white shadow-xl shadow-black rounded-lg">
-      <a href="" class="relative flex mx-3 mt-3 h-60 overflow-hidden rounded-xl">
-          <img src="/img1.jpg" alt="nike" class="object-cover w-full h-full"/>
-      </a>
-      <div class="px-5 pb-5 mt-4">
-          <a href="">
-              <h5 class="text-xl tracking-tight text-slate-900">nike</h5>
-          </a>
-          <div class="flex items-center justify-between mt-2 mb-5">
-  
-          </div>
-          <button
-              class="flex items-center justify-center px-5 py-2.5 text-center text-sm font-medium text-white bg-slate-900 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300 snipcart-add-item"
-              data-item-id="2"
-              data-item-url="/"
-              data-item-name="producto"
-              data-item-price="19.900"
-              data-item-image="/img1.jpg"
-          >
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-              </svg>
-              Agregar al carrito
-          </button>
-          <button
-    class="snipcart-add-item"
-    data-item-id="3"
-    data-item-name="Product Name"
-    data-item-price="19.990"
-    data-item-url="/"
-    data-item-image="/img1.jpg"
-    data-item-description="Product Description"
->
-    Add to carad  t
-</button>
-      </div>
-  </div>
-  
+  <section class="inline-grid gap-5 mt-12 sm:grid-cols-3 lg:grid-cols-3">
+    {products.map((product) => (
+      <Card
+        id={product.id}
+        url={`/producto/${product.id}`}
+        title={product.title}
+        body={product.description}
+        imgSrc={product.imgSrc}
+        price={product.price}
+        oldPrice={product.oldPrice}
+      />
+    ))}
+  </section>
 </Layout>
-
-
